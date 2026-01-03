@@ -58,12 +58,22 @@ pkg_setup() {
 }
 
 src_configure() {
-	dotnet-pkg_src_configure
+	# Disable Trimming to avoid needing the 2GB ilcompiler package
+	# and restrict RID to avoid downloading all architectures if possible.
+	local mydotnetargs=(
+		-p:PublishTrimmed=false
+		-p:EnableCompressionInSingleFile=false
+	)
+	dotnet-pkg_src_configure "${mydotnetargs[@]}"
 }
 
 src_compile() {
 	# 1. Build CLI using dotnet-pkg (Net8)
-	dotnet-pkg_src_compile
+	local mydotnetargs=(
+		-p:PublishTrimmed=false
+		-p:EnableCompressionInSingleFile=false
+	)
+	dotnet-pkg_src_compile "${mydotnetargs[@]}"
 
 	# 2. Build UI using msbuild (Mono/Net4.8)
 	# Clean any potential previous build artifacts
