@@ -1,0 +1,16 @@
+BDEPEND=dev-dotnet/dotnet-sdk dev-lang/mono dev-util/desktop-file-utils virtual/dotnet-sdk:8.0 dev-dotnet/csharp-gentoodotnetinfo
+DEFINED_PHASES=compile configure install postinst postrm prepare setup test unpack
+DEPEND=dev-lang/mono net-vpn/openvpn net-misc/curl app-admin/sudo sys-auth/polkit x11-libs/libnotify dev-libs/libayatana-appindicator
+DESCRIPTION=AirVPN client (Eddie) - VPN tunnel UI and CLI
+EAPI=8
+HOMEPAGE=https://eddie.website https://github.com/AirVPN/Eddie
+INHERIT=dotnet-pkg mono-env desktop xdg-utils
+IUSE=debug
+KEYWORDS=~amd64
+LICENSE=GPL-3
+RDEPEND=dev-lang/mono net-vpn/openvpn net-misc/curl app-admin/sudo sys-auth/polkit x11-libs/libnotify dev-libs/libayatana-appindicator virtual/dotnet-sdk:8.0
+RESTRICT=strip
+SLOT=0
+SRC_URI=https://github.com/AirVPN/Eddie/archive/2.24.6.tar.gz -> eddie-ui-2.24.6.tar.gz https://api.nuget.org/v3-flatcontainer/microsoft.csharp/4.7.0/microsoft.csharp.4.7.0.nupkg https://api.nuget.org/v3-flatcontainer/microsoft.netcore.app.crossgen2.linux-x64/8.0.8/microsoft.netcore.app.crossgen2.linux-x64.8.0.8.nupkg
+_eclasses_=edo	a5e294016aa84979fcb2459749eb80b2	multiprocessing	1e32df7deee68372153dca65f4a7c21f	nuget	5b6663023b71fb1220f230ac225205ae	dotnet-pkg-base	6c5f563c6f9f99038ac0ddf7403e3b55	dotnet-pkg	149be926006315896e1a57f36db1b772	mono-env	de65900415c861786a591376c62844cb	desktop	7b6f6e9d65093966fbc8475399c5dd4e	xdg-utils	42869b3c8d86a70ef3cf75165a395e09
+_md5_=f2fa0a3171fd3309cc8a193027331dbd
