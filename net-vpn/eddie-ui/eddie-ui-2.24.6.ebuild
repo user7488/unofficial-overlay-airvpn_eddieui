@@ -46,7 +46,6 @@ DEPEND="
 RDEPEND="${DEPEND}"
 BDEPEND="
 	${DOTNET_PKG_BDEPEND}
-	dev-dotnet/dotnet-sdk
 	dev-lang/mono
 	dev-util/desktop-file-utils
 "
